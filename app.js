@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//general routes
+//app routes
 app.use('/', require('./app_server/routes/index'));
 //api routes
 app.use('/api', require('./app_api/routes/index'));

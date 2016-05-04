@@ -1,17 +1,55 @@
--- DROP USER `guest`@`localhost`; /* Uncomment to run script again */
+-- MySQL dump 10.13  Distrib 5.6.27, for osx10.11 (x86_64)
 --
--- CREATE USER `guest`@`localhost` IDENTIFIED BY 'guest';
-GRANT ALL PRIVILEGES ON companydb.* TO `guest`@`localhost`;
+-- Host: localhost    Database: Contacts
+-- ------------------------------------------------------
+-- Server version	5.6.27
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE contact
-(
-  id                 INTEGER NOT NULL AUTO_INCREMENT,
-  firstName          VARCHAR(30) NOT NULL,
-  lastName           VARCHAR(30) NOT NULL,
-  phoneNumber        VARCHAR(30),
-  PRIMARY KEY (id)
-);
+--
+-- Table structure for table `contact`
+--
 
--- CREATE TABLE contact (id INTEGER NOT NULL AUTO_INCREMENT, firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30), sex VARCHAR(6), age INTEGER, phoneNumber VARCHAR(12), PRIMARY KEY(id));
--- insert into departments (name, location_id) values ('Administration', 2);
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
+  `sex` varchar(6) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `phoneNumber` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact`
+--
+
+LOCK TABLES `contact` WRITE;
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` VALUES (1,'Andrew','Conlin','Male',25,'4012259746'),(2,'Charles','Shaft','Male',27,'3038574646'),(3,'Mary','Johnson','Female',33,'4018675309');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-05-03 14:34:27

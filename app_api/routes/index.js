@@ -3,18 +3,21 @@ var router = express.Router();
 var ctrlMain = require('../controllers/main');
 
 /* GET home page. */
-router.get('/getTodos', ctrlMain.index);
+router.get('/getContacts', ctrlMain.getAll);
+
+/* GET home page. */
+router.get('/getContact/:id', ctrlMain.getContact);
 
 /*Add a new todo item*/
-router.post('/createTodo', ctrlMain.create);
+router.post('/createContact', ctrlMain.create);
 
 /*Delete an existing todo item*/
-router.get('/deleteTodo/:id', ctrlMain.delete);
-
-/*edit an existing todo item*/
-router.get('/editTodo/:id', ctrlMain.edit);
-
-/*update an existing todo item*/
-router.post('/updateTodo/:id', ctrlMain.update);
+router.get('/deleteContact/:id', ctrlMain.delete);
+//
+// /*edit an existing todo item*/
+// router.get('/editContact/:id', ctrlMain.edit);
+//
+// /*update an existing todo item*/
+// router.post('/updateContact/:id', ctrlMain.update);
 
 module.exports = router;

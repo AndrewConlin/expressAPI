@@ -5,7 +5,7 @@ exports.getConnection = function(callback){
     host     : 'localhost',
     user     : 'guest',
     password : 'guest',
-    database : 'todoDB'
+    database : 'Contacts'
   });
 
   con.connect(function(err){
